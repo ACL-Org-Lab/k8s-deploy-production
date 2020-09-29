@@ -4,12 +4,11 @@ kind: Deployment
 metadata:
   name: payment-v1
   namespace: production
-  labels:
-    name: payment-v1
 spec:
   replicas: 1
-  matchLabels:
-    name: payment-v1
+  selector:
+    matchLabels:
+      app: payment
   template:
     metadata:
       labels:

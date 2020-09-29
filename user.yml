@@ -4,12 +4,11 @@ kind: Deployment
 metadata:
   name: user-v1
   namespace: production
-  labels:
-    name: user-v1
 spec:
   replicas: 1
-  matchLabels:
-    name: user-v1
+  selector:
+    matchLabels:
+      app: user
   template:
     metadata:
       labels:

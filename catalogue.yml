@@ -4,12 +4,11 @@ kind: Deployment
 metadata:
   name: catalogue-v1
   namespace: production
-  labels:
-    name: catalogue-v1
 spec:
   replicas: 1
-  matchLabels:
-    name: catalogue-v1
+  selector:
+    matchLabels:
+      app: catalogue
   template:
     metadata:
       labels:
